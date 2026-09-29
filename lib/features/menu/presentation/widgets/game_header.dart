@@ -13,9 +13,9 @@ class GameHeader extends StatelessWidget {
         color: Theme.of(context).colorScheme.primaryContainer,
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Column(
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           Text(
             'Selamat Datang, Gamer!',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

@@ -31,7 +31,7 @@ void main() {
   double totalPrice =
   menuList.fold(0, (sum, item) => sum + item.finalPrice());
 
-  print('Semua Nama Menu: $allNames');
+  print('Semua Nama Menu: $allNames');// ignore_for_file: avoid_print
   print('Menu < Rp 15.000: ${cheapItems.map((e) => e.name).toList()}');
   print('Total Harga: Rp $totalPrice');
 }
