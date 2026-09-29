@@ -5,15 +5,50 @@ class MenuHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(vertical: 16.0),
-      child: Text(
-        'Daftar Menu Restoran',
-        style: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-        ),
-        textAlign: TextAlign.center,
+    final colorScheme = Theme.of(context).colorScheme;
+
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
+      color: colorScheme.primaryContainer,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Menu Hari Ini',
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+              color: colorScheme.onPrimaryContainer,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'Pilih menu, atur jumlah, lihat total di bawah.',
+            style: TextStyle(
+              fontSize: 13,
+              color: colorScheme.onPrimaryContainer,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Row(
+            children: [
+              Icon(
+                Icons.storefront,
+                size: 16,
+                color: colorScheme.onPrimaryContainer,
+              ),
+              const SizedBox(width: 6),
+              Text(
+                'Buka 08.00 - 21.00',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: colorScheme.onPrimaryContainer,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
