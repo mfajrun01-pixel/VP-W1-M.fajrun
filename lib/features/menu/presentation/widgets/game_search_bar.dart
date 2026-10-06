@@ -18,20 +18,20 @@ class GameSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: TextField(
+      child: SearchBar(
         controller: controller,
-        decoration: InputDecoration(
-          hintText: 'Cari judul game...',
-          prefixIcon: const Icon(Icons.search),
-          suffixIcon: query.isEmpty
-              ? null
-              : IconButton(
-            icon: const Icon(Icons.clear),
-            onPressed: onClear,
-          ),
-          border: const OutlineInputBorder(),
-        ),
+        hintText: 'Cari judul game...',
+        leading: const Icon(Icons.search),
+        trailing: query.isEmpty
+            ? null
+            : [
+                IconButton(
+                  icon: const Icon(Icons.clear),
+                  onPressed: onClear,
+                ),
+              ],
         onChanged: onChanged,
+        elevation: const WidgetStatePropertyAll(1.0),
       ),
     );
   }

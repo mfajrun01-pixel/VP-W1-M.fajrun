@@ -12,27 +12,42 @@ class EmptyGameState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final textTheme = theme.textTheme;
+
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.sports_esports_outlined, size: 64, color: Colors.grey),
+            Icon(
+              Icons.sports_esports_outlined,
+              size: 64,
+              color: colorScheme.outline,
+            ),
             const SizedBox(height: 16),
             Text(
-              query.isEmpty ? 'Belum ada game di backlog' : 'Game "$query" tidak ditemukan',
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              query.isEmpty
+                  ? 'Belum ada game di backlog'
+                  : 'Game "$query" tidak ditemukan',
+              style: textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: colorScheme.onSurface,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
-            const Text(
+            Text(
               'Coba tambahkan game baru atau ubah kata kunci pencarian Anda.',
-              style: TextStyle(color: Colors.grey),
+              style: textTheme.bodyMedium?.copyWith(
+                color: colorScheme.onSurfaceVariant,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
-            ElevatedButton(
+            FilledButton.tonal(
               onPressed: onResetSearch,
               child: const Text('Reset Pencarian'),
             ),
