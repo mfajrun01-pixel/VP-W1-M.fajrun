@@ -5,25 +5,34 @@ class GameHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final textTheme = theme.textTheme;
+
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(16.0),
       margin: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primaryContainer,
+        color: colorScheme.primaryContainer,
         borderRadius: BorderRadius.circular(12),
       ),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Selamat Datang, Gamer!',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: textTheme.headlineSmall?.copyWith(
+              fontWeight: FontWeight.bold,
+              color: colorScheme.onPrimaryContainer
+            )
           ),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             'Kelola daftar game impian dan progres mainmu di sini.',
-            style: TextStyle(fontSize: 14),
+            style: textTheme.bodyMedium?.copyWith(
+              color: colorScheme.onPrimaryContainer,
+            )
           ),
         ],
       ),
