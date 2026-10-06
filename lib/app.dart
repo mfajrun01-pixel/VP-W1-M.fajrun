@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'core/theme/app_theme.dart';
 import 'features/menu/presentation/game_screen.dart';
 
 class GameH1 extends StatelessWidget {
@@ -7,10 +8,8 @@ class GameH1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Game',
-      theme: ThemeData(
-        colorSchemeSeed: const Color(0xFF00696E),
-      ),
+      title: 'GameVault',
+      theme: AppTheme.lightTheme,
       home: const GameScreen(),
     );
   }
