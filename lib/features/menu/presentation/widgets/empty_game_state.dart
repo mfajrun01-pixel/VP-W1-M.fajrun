@@ -16,9 +16,9 @@ class EmptyGameState extends StatelessWidget {
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(24.0),
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(24.0),
+      child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -32,6 +32,8 @@ class EmptyGameState extends StatelessWidget {
               query.isEmpty
                   ? 'Belum ada game di backlog'
                   : 'Game "$query" tidak ditemukan',
+              maxLines: 2 ,
+              overflow: TextOverflow.ellipsis,
               style: textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: colorScheme.onSurface,
@@ -41,6 +43,8 @@ class EmptyGameState extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               'Coba tambahkan game baru atau ubah kata kunci pencarian Anda.',
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
               style: textTheme.bodyMedium?.copyWith(
                 color: colorScheme.onSurfaceVariant,
               ),

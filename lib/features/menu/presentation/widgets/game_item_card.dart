@@ -29,6 +29,8 @@ class GameItemCard extends StatelessWidget {
         ),
         title: Text(
           game['title'],
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           style: textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
             color: colorScheme.onSurface,
@@ -45,6 +47,8 @@ class GameItemCard extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 label: Text(
                   game['platform'],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: textTheme.labelSmall?.copyWith(
                     color: colorScheme.onSecondaryContainer,
                   ),
@@ -57,6 +61,8 @@ class GameItemCard extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 label: Text(
                   game['status'],
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: textTheme.labelSmall?.copyWith(
                     color: colorScheme.onTertiaryContainer,
                   ),
